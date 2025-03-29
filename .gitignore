@@ -22,4 +22,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# src/TRAVEL/Assets
+src/TRAVEL/Assets/1.mp4
+src/TRAVEL/Assets/2.mp4
