@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import video from './Assets/1.mp4'
 // import video2 from '../../../assets/1.mp4'
 
