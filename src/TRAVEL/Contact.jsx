@@ -196,9 +196,7 @@ function TravelHomePage() {
                   {dest.location}
                 </Card.Text>
                 <Card.Text className="d-flex align-items-center">
-                  <img
-                    src={star}
-                    alt="Location"
+                  <img src={star} alt="Location"
                     style={{
                       width: "16px",
                       height: "16px",
