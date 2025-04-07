@@ -4,6 +4,7 @@ import Home from './TRAVEL/Home';
 // import Contact from './TRAVEL/Contact';
 import NavBar from './TRAVEL/NavBar';
 import TravelHomePage from './TRAVEL/Contact';
+import Footer from './TRAVEL/Footer';
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/contact' element={<TravelHomePage />} />
 
         </Routes>
+        <Footer />
     </BrowserRouter>
   );
 }

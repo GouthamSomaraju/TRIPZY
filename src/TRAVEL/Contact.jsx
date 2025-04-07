@@ -3,24 +3,12 @@ import { Card, Button, Container, Row, Col } from "react-bootstrap";
 // import adventure from "./Assets/adventure.webp";
 import video from "./Assets/1.mp4";
 
-import {destinations, features, locationIcon, star, time} from "./data";
-
+import { destinations, features, locationIcon, star, time } from "./data";
 
 function TravelHomePage() {
   return (
     <Container className="my-5">
       {/* Hero Section */}
-      {/* <div
-        className="bg-dark text-white text-center rounded p-5 mb-4"
-        style={{
-          backgroundImage: `url(${adventure})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center"
-        }}
-      >
-        
-        <h1 className="display-4 fw-bold">Explore the World with Us</h1>
-      </div> */}
       <div
         className="position-relative overflow-hidden rounded mb-4"
         style={{ height: "400px" }}
@@ -90,7 +78,9 @@ function TravelHomePage() {
                   {dest.location}
                 </Card.Text>
                 <Card.Text className="d-flex align-items-center">
-                  <img src={star} alt="Location"
+                  <img
+                    src={star}
+                    alt="Location"
                     style={{
                       width: "16px",
                       height: "16px",
@@ -101,19 +91,23 @@ function TravelHomePage() {
                 </Card.Text>
                 <Card.Text>{dest.type}</Card.Text>
                 <hr />
-                <Card.Text className="d-flex justify-content-between">
+                <div className="d-flex justify-content-between mt-2">
+                  <div>From: {dest.price}</div>
                   <div>
-                    From: {dest.price}
+                    <img
+                      src={time}
+                      alt="time"
+                      style={{
+                        width: "16px",
+                        height: "16px",
+                        marginRight: "6px",
+                      }}
+                    />
+                    {dest.days} Days - {dest.nights} Nights
                   </div>
-                  <div>
-                    <img src={time} alt="time"
-                    style={{
-                      width: "16px",
-                      height: "16px",
-                      marginRight: "6px",
-                    }} />{dest.days} Days-{dest.nights} Nights
-                  </div>
-                </Card.Text>
+                </div>
+
+               
               </Card.Body>
             </Card>
           </Col>
