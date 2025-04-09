@@ -1,58 +1,62 @@
-import React from 'react'
+import React from 'react';
+import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+
+// import image from './assets/images/img.jpg'
+import bg from './assets/images/bg2.jpg'
 
 const Login = () => {
   return (
-    <div style={{backgroundImage: `url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGxvZ2luJTIwcGFnZXxlbnwwfHx8fDE2OTI3NTY5MjM&ixlib=rb-4.0.3&q=80&w=1080')`, height: '100vh', backgroundSize: 'cover', backgroundPosition: 'center'}} className="d-flex justify-content-center align-items-center">
-      <h1>Login</h1>
-      <div><img src="" alt="" /></div>
-      <form action="">
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">Email address</label>
-          <input type="email" className="form-control" id="email" aria-describedby="emailHelp" />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="password" className="form-label">Password</label>
-          <input type="password" className="form-control" id="password" />
-        </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
-        <div className="mb-3 form-check">
-          <input type="checkbox" className="form-check-input" id="rememberMe" />
-          <label className="form-check-label" htmlFor="rememberMe">Remember me</label>
-        </div>
-        <div className="mb-3">
-          <a href="#">Forgot Password?</a>
-        </div>
-        <div className="mb-3">
-          <p>Don't have an account? <a href="#">Sign up</a></p>
-        </div>
-        <div className="mb-3">
-          <p>Or login with:</p>
-          <button type="button" className="btn btn-secondary">Google</button>
-          <button type="button" className="btn btn-secondary">Facebook</button>
-            <button type="button" className="btn btn-secondary">Twitter</button>
-        </div>
-        <div className="mb-3">
-          <p>By logging in, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
-        </div>
-        <div className="mb-3">
-          <p>Need help? <a href="#">Contact us</a></p>
-        </div>
-        <div className="mb-3">
-          <p>Login as <a href="#">Admin</a></p>
-        </div>
-        <div className="mb-3">
-          <p>Login as <a href="#">User</a></p>
-        </div>
-        <div className="mb-3">
-          <p>Login as <a href="#">Guest</a></p>
-        </div>
-        <div className="mb-3">
-          <p>Login as <a href="#">Member</a></p>
-        </div>
-      </form>
+    <div
+      style={{
+        background:`url(${bg})`,
+        minHeight: '100vh',
+        backgroundSize: 'cover',
+        backgroundPosition: 'cover',
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      {/* <Container>
+        <Row className="justify-content-center">
+          <Col xs={12} md={10} lg={8}>
+            <Card className="p-4 shadow-lg rounded-4">
+              <Row className="align-items-center">
+                
+                <Col md={6} className="mb-4 mb-md-0 text-center">
+                  <img
+                    src={image}
+                    alt="Login Visual"
+                    className="img-fluid rounded-4"
+                    style={{ maxHeight: '300px' }}
+                  />
+                </Col>
 
+                <Col md={6}>
+                  <h3 className="mb-4 text-center">Login</h3>
+                  <Form>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                      <Form.Label>Email address</Form.Label>
+                      <Form.Control type="email" placeholder="Enter email" />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                      <Form.Label>Password</Form.Label>
+                      <Form.Control type="password" placeholder="Password" />
+                    </Form.Group>
+
+                    <Button variant="primary" type="submit" className="w-100">
+                      Login
+                    </Button>
+                  </Form>
+                </Col>
+              </Row>
+            </Card>
+          </Col>
+        </Row>
+      </Container> */}
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

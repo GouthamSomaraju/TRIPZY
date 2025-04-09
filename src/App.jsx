@@ -5,7 +5,7 @@ import Home from './TRAVEL/Home';
 import NavBar from './TRAVEL/NavBar';
 import TravelHomePage from './TRAVEL/Contact';
 import Footer from './TRAVEL/Footer';
-import Login from './Login-Signup/Login'; 
+// import Login from './Login-Signup/Login'; 
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           <Route  path="/" element={<Home />} />
           {/* <Route path='/contact' element={<Contact />} /> */}
           <Route path='/contact' element={<TravelHomePage />} />
-          <Route path='/login' element={<Login />} />
+          {/* <Route path='/login' element={<Login />} /> */}
 
         </Routes>
         <Footer />
