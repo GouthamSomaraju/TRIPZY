@@ -57,11 +57,11 @@ const NavBar = () => {
           </Nav>
 
           <Nav>
-            <Nav.Link href="#deets">
-              <Button variant="outline-dark">Light</Button>
-            </Nav.Link>
-            <Nav.Link href="#deets">
-              <Button variant="outline-dark">Light</Button>
+            <NavLink to="/login" className="d-flex align-items-center text-decoration-none">
+              <Button variant="outline-dark">Login</Button>
+            </NavLink>
+            <Nav.Link href="/signup">
+              <Button variant="outline-dark">SignUp</Button>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

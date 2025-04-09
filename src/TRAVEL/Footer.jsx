@@ -158,10 +158,10 @@ export default function Footer() {
           <MDBCol lg='3' md='4' className='mb-4 mb-md-0'>
             <h5 className='text-uppercase'>Contact Info</h5>
             <ul className='list-unstyled'>
-              <li><MDBIcon icon="map-marker-alt" className='me-2' /> New York, NY 10012, US</li>
+              <li><MDBIcon icon="map-marker-alt" className='me-2' />Hyderabad, Telangana India</li>
               <li><MDBIcon icon="envelope" className='me-2' /> info@traveltour.com</li>
-              <li><MDBIcon icon="phone" className='me-2' /> + 01 234 567 88</li>
-              <li><MDBIcon icon="print" className='me-2' /> + 01 234 567 89</li>
+              <li><MDBIcon icon="phone" className='me-2' /> +91 7674938299</li>
+              <li><MDBIcon icon="print" className='me-2' /> +91 8328415349</li>
             </ul>
           </MDBCol>
         </MDBRow>

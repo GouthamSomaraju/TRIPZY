@@ -2,8 +2,9 @@ import React from 'react'
 
 const Login = () => {
   return (
-    <div>
+    <div style={{backgroundImage: `url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGxvZ2luJTIwcGFnZXxlbnwwfHx8fDE2OTI3NTY5MjM&ixlib=rb-4.0.3&q=80&w=1080')`, height: '100vh', backgroundSize: 'cover', backgroundPosition: 'center'}} className="d-flex justify-content-center align-items-center">
       <h1>Login</h1>
+      <div><img src="" alt="" /></div>
       <form action="">
         <div className="mb-3">
           <label htmlFor="email" className="form-label">Email address</label>
