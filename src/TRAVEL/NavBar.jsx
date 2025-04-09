@@ -1,47 +1,73 @@
-import React from 'react'
-
-// import { Link } from 'react-router-dom'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
-import logo from './Assets/images/Logo/logo2.png'
+import React from 'react';
+import { Navbar, Nav, Container, Button } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <div>
-      <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">
-        <img
-          src={logo}
-          alt="Logo"
+        <Navbar.Brand href="#home">Travel Tour</Navbar.Brand>
+        {/* <img
+          src=''
+          alt="Tour Travel"
           width="100"
           height="100"
-          className="d-inline-block align-top"/></Navbar.Brand>
+          className="d-inline-block align-top"/> */}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href='/'>Home</Nav.Link>
-            <Nav.Link href="/contact">Packages</Nav.Link>
-            <Nav.Link href="#pricing">Shop</Nav.Link>
-            <Nav.Link href="#pricing">About</Nav.Link>
-            <Nav.Link href="#pricing">Pages</Nav.Link>
-            <Nav.Link href="#pricing">Contact</Nav.Link>
-
-
-
+          {/* Centering the nav links */}
+          <Nav className="mx-auto d-flex justify-content-center gap-3">
+            <NavLink 
+              to="/" 
+              className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+            >
+              Home
+            </NavLink>
+            <NavLink 
+              to="/packages" 
+              className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+            >
+              Packages
+            </NavLink>
+            <NavLink 
+              to="/shop" 
+              className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+            >
+              Shop
+            </NavLink>
+            <NavLink 
+              to="/about" 
+              className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+            >
+              About
+            </NavLink>
+            <NavLink 
+              to="/pages" 
+              className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+            >
+              Pages
+            </NavLink>
+            <NavLink 
+              to="/contact" 
+              className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+            >
+              Contact
+            </NavLink>
           </Nav>
+
           <Nav>
-            <Nav.Link href="#deets"><Button variant="outline-dark">Light</Button></Nav.Link>
-            <Nav.Link href="#deets"><Button variant="outline-dark">Light</Button></Nav.Link>
+            <Nav.Link href="#deets">
+              <Button variant="outline-dark">Light</Button>
+            </Nav.Link>
+            <Nav.Link href="#deets">
+              <Button variant="outline-dark">Light</Button>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-      
-    </div>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;
