@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
-// import image from './assets/images/img.jpg'
+import image from './assets/images/img.jpg'
 import bg from './assets/images/bg2.jpg'
 
 const Login = () => {
