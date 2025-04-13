@@ -1,11 +1,13 @@
 import React from'react';
-// import './App.css';
 import Home from './TRAVEL/Home';
-// import Contact from './TRAVEL/Contact';
 import NavBar from './TRAVEL/NavBar';
-import TravelHomePage from './TRAVEL/Contact';
 import Footer from './TRAVEL/Footer';
+import ContactUs from './TRAVEL/Contact';
+import './App.css';
+// import Contact from './TRAVEL/Contact';
+// import TravelHomePage from './TRAVEL/Contact';
 // import Login from './Login-Signup/Login'; 
+
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
 function App() {
   return (
@@ -13,8 +15,9 @@ function App() {
     <NavBar />
         <Routes>
           <Route  path="/" element={<Home />} />
-          {/* <Route path='/contact' element={<Contact />} /> */}
-          <Route path='/contact' element={<TravelHomePage />} />
+          <Route path='/contact' element={<ContactUs />} />
+
+          {/* <Route path='/contact' element={<TravelHomePage />} /> */}
           {/* <Route path='/login' element={<Login />} /> */}
 
         </Routes>

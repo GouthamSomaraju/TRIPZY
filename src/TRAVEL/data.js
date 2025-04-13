@@ -19,6 +19,16 @@ import locationIcon from "./Assets/images/icons/location.png";
 import star from "./Assets/images/icons/star.png";
 import time from "./Assets/images/icons/time.png";
 
+// Contact Page
+import call from "./Assets/images/social/call.png";
+import mail from "./Assets/images/social/mail.png";
+import globe from "./Assets/images/social/globe.png";
+
+
+
+
+
+
 const destinations = [
   {
     id: 1,
@@ -142,4 +152,35 @@ let features = [
   },
 ];
 
-export { destinations, features, locationIcon, star, time };
+
+
+
+// Contact Us Data
+const contactUs = [
+  {
+    id: 1,
+    title: "Call Us",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    image: call,
+    contact: "+91 7674938299",
+    icon: "fa-solid fa-phone",
+  },
+  {
+    id: 2,
+    title: "Email Us",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    image: mail,
+    contact: "gouthamsomaraju11@gmail.com",
+    icon: "fa-solid fa-envelope",
+  },
+  {
+    id: 3,
+    title: "Social Media",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    image: globe,
+    contact: "github.com/GouthamSomaraju",
+    icon: "fa-brands fa-linkedin  fa-brands fa-github",
+  },
+];
+
+export { destinations, features, locationIcon, star, time, contactUs };

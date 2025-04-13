@@ -9,7 +9,7 @@ import Login from './Login-Signup/Login.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* <App /> */}
-    <Login />
+    <App />
+    {/* <Login /> */}
   </StrictMode>
 )
