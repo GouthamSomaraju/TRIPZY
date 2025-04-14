@@ -10,6 +10,7 @@ import './App.css';
 // import Login from './Login-Signup/Login'; 
 
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
+import Packages from './TRAVEL/Packages';
 function App() {
   return (
     <BrowserRouter >
@@ -18,6 +19,7 @@ function App() {
           <Route  path="/" element={<Home />} />
           <Route path='/contact' element={<ContactUs />} />
           <Route path='/about' element={<About />} />
+          <Route path='/packages' element={<Packages />} />
 
           {/* <Route path='/contact' element={<TravelHomePage />} /> */}
           {/* <Route path='/login' element={<Login />} /> */}

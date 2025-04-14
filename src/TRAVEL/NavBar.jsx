@@ -9,13 +9,13 @@ const NavBar = () => {
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
 
       <Container>
-        <Navbar.Brand href="#home">Travel Tour</Navbar.Brand>
+        <Navbar.Brand href="#home">
         <img
           src={logo}
           alt="Tour Travel"
-          width="100"
-          height="100"
-          className="d-inline-block align-top"/>
+          width="170"
+          height="170"
+          className="d-inline-block align-top"/></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         
         <Navbar.Collapse id="responsive-navbar-nav">
