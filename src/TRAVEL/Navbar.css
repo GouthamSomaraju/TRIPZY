@@ -1,0 +1,11 @@
+/* NavBar.css */
+
+.nav-link-custom {
+    color: #314351 !important; /* Override Bootstrap default link color */
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link-custom:hover {
+    color: #1d2a33; /* Optional: hover color */
+  }
+  
