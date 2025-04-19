@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import logo from './assets/images/Logo/logo.png';
-// import './Navbar.css'
+import './Navbar.css'
 
 const NavBar = () => {
   return (
@@ -24,9 +24,15 @@ const NavBar = () => {
           <Nav className="mx-auto d-flex justify-content-center gap-3">
             <NavLink 
               to="/" 
-              className={({ isActive }) => `{${isActive} ? "nav-link active" : "nav-link"}` }
+              className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} 
             >
               Home
+            </NavLink>
+            <NavLink 
+              to="/about" 
+              className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+            >
+              About
             </NavLink>
             <NavLink 
               to="/packages" 
@@ -40,18 +46,7 @@ const NavBar = () => {
             >
               Shop
             </NavLink>
-            <NavLink 
-              to="/about" 
-              className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
-            >
-              About
-            </NavLink>
-            <NavLink 
-              to="/pages" 
-              className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
-            >
-              Pages
-            </NavLink>
+            
             <NavLink 
               to="/contact" 
               className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}

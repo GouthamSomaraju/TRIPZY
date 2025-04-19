@@ -1,11 +1,42 @@
-/* NavBar.css */
+/* 
+  .nav-link{
+    color: #314351;
+    font-size: 20px;
+    font-weight: bolder;
 
-.nav-link-custom {
-    color: #314351 !important; /* Override Bootstrap default link color */
+  }
+  .nav-link:hover{
+    color: #526e83;
+  } */
+  .nav-link {
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 8px 16px;
+    color: #314351;
+    text-decoration: none;
+    position: relative;
+    font-weight: 500;
     transition: color 0.3s ease;
   }
   
-  .nav-link-custom:hover {
-    color: #1d2a33; /* Optional: hover color */
+  .nav-link:hover {
+    color: #526e83;
+  }
+  
+  /* Active link styling */
+  .nav-link.active {
+    color: #ffcb68;
+    font-weight: 600;
+  }
+  
+  /* Underline effect */
+  .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffcf76;
   }
   
