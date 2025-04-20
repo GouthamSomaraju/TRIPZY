@@ -12,6 +12,7 @@ import './App.css';
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import Packages from './TRAVEL/Packages';
 import CategoryPage from './TRAVEL/CategoryPage';
+import ProductDetails from './TRAVEL/ProductDetails';
 function App() {
   return (
     <BrowserRouter >
@@ -21,7 +22,10 @@ function App() {
           <Route path='/contact' element={<ContactUs />} />
           <Route path='/about' element={<About />} />
           <Route path='/packages' element={<Packages />} />
-          <Route path="/category/:category" element={<CategoryPage />} />
+          {/* <Route path="/category/:category" element={<CategoryPage />} /> */}
+          <Route path="/:category" element={<CategoryPage />} />
+        <Route path="/:category/:id" element={<ProductDetails />} />
+
 
           {/* <Route path='/contact' element={<TravelHomePage />} /> */}
           {/* <Route path='/login' element={<Login />} /> */}

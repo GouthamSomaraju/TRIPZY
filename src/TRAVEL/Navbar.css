@@ -40,3 +40,23 @@
     background-color: #ffcf76;
   }
   
+  
+/* Targeting outline buttons inside Navbar */
+.navbar .btn-outline-dark {
+  border-color: #314351;
+  color: #314351;
+  font-size: 1.2rem;
+  font-weight: 500;  /* Increase the text size */
+  border-width: 2px;  /* Increase the outline (border) size */
+  padding: 0.3rem 0.7rem;  /* Increase padding for a better button size */
+  transition: all 0.3s ease-in-out;  /* Smooth transition */
+}
+
+/* Hover effect for outline buttons */
+.navbar .btn-outline-dark:hover {
+  background-color: #314351;
+  color: white;
+  border-color: #314351;
+  font-size: 1.3rem;  /* Increase text size on hover */
+  border-width: 3px;  /* Increase the outline size on hover */
+}

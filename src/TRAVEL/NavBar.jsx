@@ -41,13 +41,6 @@ const NavBar = () => {
               Packages
             </NavLink>
             <NavLink 
-              to="/shop" 
-              className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
-            >
-              Shop
-            </NavLink>
-            
-            <NavLink 
               to="/contact" 
               className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
             >
@@ -56,12 +49,13 @@ const NavBar = () => {
           </Nav>
 
           <Nav>
+          <Nav.Link href="/signup">
+              <Button variant="outline-dark">SignUp</Button>
+            </Nav.Link>
             <NavLink to="/login" className="d-flex align-items-center text-decoration-none">
               <Button variant="outline-dark">Login</Button>
             </NavLink>
-            <Nav.Link href="/signup">
-              <Button variant="outline-dark">SignUp</Button>
-            </Nav.Link>
+           
           </Nav>
         </Navbar.Collapse>
       </Container>

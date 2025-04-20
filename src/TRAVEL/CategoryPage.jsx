@@ -1,6 +1,6 @@
 // CategoryPage.js
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom"; // <-- Import Link
 import { Card, Row, Col, Container, Spinner } from "react-bootstrap";
 
 const apiMap = {
@@ -40,13 +40,15 @@ const CategoryPage = () => {
         <Row>
           {data.map((dest) => (
             <Col md={6} lg={4} key={dest.id} className="mb-4">
-              <Card className="h-100 shadow-sm">
-                <Card.Img variant="top" src={dest.image} />
-                <Card.Body>
-                  <Card.Title>{dest.title}</Card.Title>
-                  <Card.Text className="text-muted">{dest.description}</Card.Text>
-                </Card.Body>
-              </Card>
+              <Link to={`/${category}/${dest.id}`} style={{ textDecoration: "none", color: "inherit" }}>
+                <Card className="h-100 shadow-sm">
+                  <Card.Img variant="top" src={dest.image} />
+                  <Card.Body>
+                    <Card.Title>{dest.title}</Card.Title>
+                    <Card.Text className="text-muted">{dest.description}</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Link>
             </Col>
           ))}
         </Row>
