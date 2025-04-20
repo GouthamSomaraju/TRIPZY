@@ -111,7 +111,7 @@ export default function Footer() {
               </MDBCol>
 
               <MDBCol md='5' start>
-                <MDBInput contrast type='email' label='Email address' className='mb-4' />
+                <MDBInput contrast type='email' label='Email address' className='mb-4'  placeholder='Enter your Email'/>
               </MDBCol>
 
               <MDBCol size="auto">
@@ -136,10 +136,10 @@ export default function Footer() {
           <MDBCol lg='2' md='4' className='mb-4 mb-md-0'>
             <h5 className='text-uppercase'>Quick Links</h5>
             <ul className='list-unstyled'>
-              <li><a href='#!' className='text-white'>Home</a></li>
-              <li><a href='#!' className='text-white'>About</a></li>
-              <li><a href='#!' className='text-white'>Destinations</a></li>
-              <li><a href='#!' className='text-white'>Contact</a></li>
+              <li><a href="/" className='text-white'>Home</a></li>
+              <li><a href="/about" className='text-white'>About</a></li>
+              <li><a href="/packages" className='text-white'>Packages</a></li>
+              <li><a href="/contact" className='text-white'>Contact</a></li>
             </ul>
           </MDBCol>
 
@@ -147,10 +147,10 @@ export default function Footer() {
           <MDBCol lg='3' md='4' className='mb-4 mb-md-0'>
             <h5 className='text-uppercase'>Products</h5>
             <ul className='list-unstyled'>
-              <li><a href='#!' className='text-white'>Tour Packages</a></li>
-              <li><a href='#!' className='text-white'>Travel Insurance</a></li>
-              <li><a href='#!' className='text-white'>Flight Booking</a></li>
-              <li><a href='#!' className='text-white'>Hotel Deals</a></li>
+              <li><a href='/packages' className='text-white'>Tour Packages</a></li>
+              <li><a href='/packages' className='text-white'>Travel Insurance</a></li>
+              <li><a href='/packages' className='text-white'>Flight Booking</a></li>
+              <li><a href='/packages' className='text-white'>Hotel Deals</a></li>
             </ul>
           </MDBCol>
 
@@ -168,7 +168,7 @@ export default function Footer() {
       </MDBContainer>
 
       <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-        © 2025 Travel Tour | All rights reserved
+        © 2025 Tripzy | All rights reserved
       </div>
     </MDBFooter>
   );

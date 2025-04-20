@@ -20,11 +20,13 @@
   }
   
   .nav-link:hover {
+    font-size: 22px;
     color: #526e83;
   }
   
   /* Active link styling */
   .nav-link.active {
+    font-size: 22px;
     color: #ffcb68;
     font-weight: 600;
   }
@@ -57,6 +59,6 @@
   background-color: #314351;
   color: white;
   border-color: #314351;
-  font-size: 1.3rem;  /* Increase text size on hover */
+  font-size: 1.21rem;  /* Increase text size on hover */
   border-width: 3px;  /* Increase the outline size on hover */
 }

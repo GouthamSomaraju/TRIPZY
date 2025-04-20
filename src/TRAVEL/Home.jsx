@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 // import video2 from '../../../assets/1.mp4'
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
 // import adventure from "./Assets/adventure.webp";
@@ -6,8 +6,13 @@ import video from "./Assets/1.mp4";
 
 import { destinations, features, locationIcon, star, time } from "./data";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Home = () => {
+    useEffect(() => {
+      AOS.init({ duration: 1000 }); // Initialize AOS
+    }, []);
   
   return (
     <Container className="my-5">
@@ -39,83 +44,92 @@ const Home = () => {
     </div>
 
     {/* Tour Types Section */}
-    <h2 className="mb-4 text-center">Features</h2>
-    <Row className="mb-5">
-      {features.map((feature) => (
-        <Col md={6} lg={3} key={feature.id} className="mb-4">
-          <Card className="text-center">
-            <Card.Img
-              variant="top"
-              src={feature.image}
-              className="p-3"
-              style={{ height: "100px", width: "100px", margin: "0 auto" }}
+<h2 className="mb-4 text-center">Features</h2>
+<Row className="mb-5">
+  {features.map((feature, index) => (
+    <Col
+      md={6}
+      lg={3}
+      key={feature.id}
+      className="mb-4"
+      data-aos={index % 2 === 0 ? "fade-right" : "fade-left"} // alternate AOS
+    >
+      <Card className="text-center h-100 shadow-sm">
+        <Card.Img
+          variant="top"
+          src={feature.image}
+          className="p-3"
+          style={{ height: "100px", width: "100px", margin: "0 auto" }}
+        />
+        <Card.Body>
+          <Card.Title>{feature.title}</Card.Title>
+          <Card.Text>{feature.content}</Card.Text>
+        </Card.Body>
+      </Card>
+    </Col>
+  ))}
+</Row>
+
+
+ {/* Featured Destinations */}
+<h2 className="mb-4 text-center">Featured Destinations</h2>
+<Row>
+  {destinations.map((dest,index) => (
+    <Col
+      md={6}
+      lg={3}
+      key={dest.id}
+      className="mb-4"
+      data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+      // data-aos="flip-left"
+      // data-aos-easing="ease-out-cubic"
+      // data-aos-duration="2000"
+    >
+      <Card className="h-100 shadow-sm">
+        <Card.Img variant="top" src={dest.image} />
+        <Card.Body>
+          <Card.Title>{dest.title}</Card.Title>
+
+          <Card.Text className="d-flex align-items-center">
+            <img
+              src={locationIcon}
+              alt="Location"
+              style={{ width: "16px", height: "16px", marginRight: "6px" }}
             />
-            <Card.Body>
-              <Card.Title>{feature.title}</Card.Title>
-              <Card.Text>{feature.content}</Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      ))}
-    </Row>
+            {dest.location}
+          </Card.Text>
 
-    {/* Featured Destinations */}
-    <h2 className="mb-4">Featured Destinations</h2>
-    <Row>
-      {destinations.map((dest) => (
-        <Col md={6} lg={3} key={dest.id} className="mb-4">
-          <Card>
-            <Card.Img variant="top" src={dest.image} />
-            <Card.Body>
-              <Card.Title>{dest.title}</Card.Title>
-              <Card.Text className="d-flex align-items-center">
-                <img
-                  src={locationIcon}
-                  alt="Location"
-                  style={{
-                    width: "16px",
-                    height: "16px",
-                    marginRight: "6px",
-                  }}
-                />
-                {dest.location}
-              </Card.Text>
-              <Card.Text className="d-flex align-items-center">
-                <img
-                  src={star}
-                  alt="Location"
-                  style={{
-                    width: "16px",
-                    height: "16px",
-                    marginRight: "6px",
-                  }}
-                />
-                {dest.rating}
-              </Card.Text>
-              <Card.Text>{dest.type}</Card.Text>
-              <hr />
-              <div className="d-flex justify-content-between mt-2">
-                <div>From: {dest.price}</div>
-                <div>
-                  <img
-                    src={time}
-                    alt="time"
-                    style={{
-                      width: "16px",
-                      height: "16px",
-                      marginRight: "6px",
-                    }}
-                  />
-                  {dest.days} Days-{dest.nights} Nights
-                </div>
-              </div>
+          <Card.Text className="d-flex align-items-center">
+            <img
+              src={star}
+              alt="Rating"
+              style={{ width: "16px", height: "16px", marginRight: "6px" }}
+            />
+            {dest.rating}
+          </Card.Text>
 
-             
-            </Card.Body>
-          </Card>
-        </Col>
-      ))}
-    </Row>
+          <Card.Text>{dest.type}</Card.Text>
+
+          <hr />
+
+          <div className="d-flex justify-content-between mt-2">
+            <div>From: ₹{dest.price}</div>
+            <div>
+              <img
+                src={time}
+                alt="Time"
+                style={{ width: "16px", height: "16px", marginRight: "6px" }}
+              />
+              {dest.days} Days - {dest.nights} Nights
+            </div>
+          </div>
+        </Card.Body>
+      </Card>
+    </Col>
+  ))}
+</Row>
+
+
   </Container>
   );
 };

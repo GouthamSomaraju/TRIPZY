@@ -4,6 +4,7 @@ import { Container, Row, Col, Spinner, Card } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+// API Map for fetching data based on category
 const apiMap = {
   touristic: "https://travel-api-54rr.onrender.com/touristic",
   spiritual: "https://travel-api-54rr.onrender.com/spiritual",
@@ -14,7 +15,6 @@ const ProductDetails = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // API Map for fetching data based on category
 
   useEffect(() => {
     AOS.init({ duration: 1000 }); // Initialize AOS
