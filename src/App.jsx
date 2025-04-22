@@ -4,7 +4,7 @@ import NavBar from './TRAVEL/NavBar';
 import Footer from './TRAVEL/Footer';
 import ContactUs from './TRAVEL/Contact';
 import About from './TRAVEL/About';
-import './App.css';
+// import './App.css';
 // import Contact from './TRAVEL/Contact';
 // import TravelHomePage from './TRAVEL/Contact';
 // import Login from './Login-Signup/Login'; 

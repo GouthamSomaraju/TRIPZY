@@ -8,6 +8,7 @@ import {
   MDBRow,
   MDBBtn
 } from 'mdb-react-ui-kit';
+import logo2 from './Assets/images/Logo/logo2.png'
 
 export default function Footer() {
   return (
@@ -126,7 +127,13 @@ export default function Footer() {
         <MDBRow>
           {/* Company Info */}
           <MDBCol lg='4' md='12' className='mb-4 mb-md-0'>
-            <h5 className='text-uppercase'>Travel Tour</h5>
+            <img
+                      src={logo2}
+                      alt="Tour Travel"
+                      width="170px"
+                      height="100px"
+                      style={{paddingBottom:"20px"}}
+                      className="d-inline-block align-top "/>
             <p>
               Explore the world with us! We offer custom travel plans, group tours, and unforgettable adventures to the most beautiful places on Earth.
             </p>
