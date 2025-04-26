@@ -1,62 +1,52 @@
-import React from 'react';
-import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './login.css';
 
-// import image from './assets/images/img.jpg'
-import bg from './assets/images/bg2.jpg'
+function Login() {
+  const [showPassword, setShowPassword] = useState(false);
 
-const Login = () => {
+  const handleCheckboxChange = () => {
+    setShowPassword(!showPassword);
+  };
+
+
   return (
-    <div
-      style={{
-        background:`url(${bg})`,
-        minHeight: '100vh',
-        backgroundSize: 'cover',
-        backgroundPosition: 'cover',
-        display: 'flex',
-        alignItems: 'center',
-      }}
-    >
-      {/* <Container>
-        <Row className="justify-content-center">
-          <Col xs={12} md={10} lg={8}>
-            <Card className="p-4 shadow-lg rounded-4">
-              <Row className="align-items-center">
-                
-                <Col md={6} className="mb-4 mb-md-0 text-center">
-                  <img
-                    src={image}
-                    alt="Login Visual"
-                    className="img-fluid rounded-4"
-                    style={{ maxHeight: '300px' }}
-                  />
-                </Col>
+    <div className="mainLogin">
+      <h1>Log In</h1>
+      
+      <form >
+        <div className="inputField">
+          <label htmlFor="email">Username:</label><br />
+          <input type="text" name="mail" placeholder="email" required />
+        </div>
 
-                <Col md={6}>
-                  <h3 className="mb-4 text-center">Login</h3>
-                  <Form>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                      <Form.Label>Email address</Form.Label>
-                      <Form.Control type="email" placeholder="Enter email" />
-                    </Form.Group>
+        <div className="inputField">
+          <label htmlFor="password">Enter Password:</label><br />
+          <input
+            type={showPassword ? 'text' : 'password'}
+            name="password"
+            id="password"
+            placeholder="password"
+            required
+          />
+        </div>
 
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                      <Form.Label>Password</Form.Label>
-                      <Form.Control type="password" placeholder="Password" />
-                    </Form.Group>
+        <div className="showPassword">
+          <input
+            type="checkbox"
+            id="checkbox"
+            onChange={handleCheckboxChange}
+            checked={showPassword}
+          />
+          <p id="getPassword">{showPassword ? 'Hide Password' : 'Show Password'}</p>
+        </div>
 
-                    <Button variant="primary" type="submit" className="w-100">
-                      Login
-                    </Button>
-                  </Form>
-                </Col>
-              </Row>
-            </Card>
-          </Col>
-        </Row>
-      </Container> */}
+        <button type="submit">Log In</button>
+      </form>
+
+      <p>Don't have an account? <Link to="/">SignUp</Link></p>
     </div>
   );
-};
+}
 
 export default Login;
