@@ -160,7 +160,7 @@ const contactUs = [
   {
     id: 1,
     title: "Call Us",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    description: 'Our travel experts are just a call away. Reach out to us for instant assistance, personalized tour planning, or any queries regarding your travel bookings.',
     image: call,
     contact: "+91 7674938299",
     icon: "fa-solid fa-phone",
@@ -168,7 +168,7 @@ const contactUs = [
   {
     id: 2,
     title: "Email Us",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    description: "Have questions or need a customized travel package? Drop us an email and our team will get back to you with the best options tailored to your needs.",
     image: mail,
     contact: "gouthamsomaraju11@gmail.com",
     icon: "fa-solid fa-envelope",
@@ -176,7 +176,7 @@ const contactUs = [
   {
     id: 3,
     title: "Social Media",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    description: "Stay connected with us through social media. Follow our journey, explore new destinations, and get the latest travel updates and offers!",
     image: globe,
     contact: "github.com/GouthamSomaraju",
     icon: "fa-brands fa-linkedin  fa-brands fa-github",

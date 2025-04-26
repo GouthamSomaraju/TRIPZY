@@ -1,122 +1,58 @@
 import React from 'react';
 import {
   MDBFooter,
-  MDBContainer,
   MDBIcon,
   MDBInput,
   MDBCol,
   MDBRow,
   MDBBtn
 } from 'mdb-react-ui-kit';
-import logo2 from './Assets/images/Logo/logo2.png'
+import logo2 from './Assets/images/Logo/logo2.png';
+import './Footer.css'; 
 
 export default function Footer() {
   return (
-    <MDBFooter className='text-center text-lg-start text-white' bgColor='dark'>
-      <MDBContainer className='p-4'>
+    <MDBFooter className='footer-custom text-white' bgColor='dark'>
+      <div className='footer-inner'>
 
         {/* Social Media Buttons */}
-        <section className='mb-4 d-flex justify-content-center'>
-          <MDBBtn
-            outline
-            color="light"
-            floating
-            className='me-2 rounded-circle d-flex align-items-center justify-content-center'
-            href='https://www.facebook.com/login.php/'
-            target="_blank"
-            rel="noopener noreferrer"
-            role='button'
-            style={{ width: '40px', height: '40px' }}
-          >
-            <MDBIcon fab icon='facebook-f' />
-          </MDBBtn>
-
-          <MDBBtn
-            outline
-            color="light"
-            floating
-            className='me-2 rounded-circle d-flex align-items-center justify-content-center'
-            href='https://x.com/somarajugoutham'
-            target="_blank"
-            rel="noopener noreferrer"
-            role='button'
-            style={{ width: '40px', height: '40px' }}
-          >
-            <MDBIcon fab icon='twitter' />
-          </MDBBtn>
-
-          <MDBBtn
-            outline
-            color="light"
-            floating
-            className='me-2 rounded-circle d-flex align-items-center justify-content-center'
-            href='https://mail.google.com/mail/?view=cm&to=yourname@gmail.com'
-            target="_blank"
-            rel="noopener noreferrer"
-            role='button'
-            style={{ width: '40px', height: '40px' }}
-          >
-            <MDBIcon fab icon='google' />
-          </MDBBtn>
-
-          <MDBBtn
-            outline
-            color="light"
-            floating
-            className='me-2 rounded-circle d-flex align-items-center justify-content-center'
-            href='https://www.instagram.com/__.mr__goutham.__'
-            target="_blank"
-            rel="noopener noreferrer"
-            role='button'
-            style={{ width: '40px', height: '40px' }}
-          >
-            <MDBIcon fab icon='instagram' />
-          </MDBBtn>
-
-          <MDBBtn
-            outline
-            color="light"
-            floating
-            className='me-2 rounded-circle d-flex align-items-center justify-content-center'
-            href='https://www.linkedin.com/in/goutham-somaraju/'
-            target="_blank"
-            rel="noopener noreferrer"
-            role='button'
-            style={{ width: '40px', height: '40px' }}
-          >
-            <MDBIcon fab icon='linkedin-in' />
-          </MDBBtn>
-
-          <MDBBtn
-            outline
-            color="light"
-            floating
-            className='rounded-circle d-flex align-items-center justify-content-center'
-            href='https://github.com/GouthamSomaraju'
-            target="_blank"
-            rel="noopener noreferrer"
-            role='button'
-            style={{ width: '40px', height: '40px' }}
-          >
-            <MDBIcon fab icon='github' />
-          </MDBBtn>
+        <section className='footer-social'>
+          {[
+            { icon: 'facebook-f', url: 'https://www.facebook.com/login.php/' },
+            { icon: 'twitter', url: 'https://x.com/somarajugoutham' },
+            { icon: 'google', url: 'https://mail.google.com/mail/?view=cm&to=yourname@gmail.com' },
+            { icon: 'instagram', url: 'https://www.instagram.com/__.mr__goutham.__' },
+            { icon: 'linkedin-in', url: 'https://www.linkedin.com/in/goutham-somaraju/' },
+            { icon: 'github', url: 'https://github.com/GouthamSomaraju' },
+          ].map(({ icon, url }, i) => (
+            <MDBBtn
+              key={i}
+              outline
+              color="light"
+              floating
+              className='footer-btn'
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              role='button'
+            >
+              <MDBIcon fab icon={icon} />
+            </MDBBtn>
+          ))}
         </section>
 
-        <section className=''>
-          <form action=''>
-            <MDBRow className='d-flex justify-content-center'>
+        {/* Newsletter */}
+        <section className='footer-newsletter'>
+          <form>
+            <MDBRow className='justify-content-center'>
               <MDBCol size="auto">
-                <p className='pt-2'>
-                  <strong>Sign up for our newsletter</strong>
-                </p>
+                <p><strong>Sign up for our newsletter</strong></p>
               </MDBCol>
-
-              <MDBCol md='5' start>
-                <MDBInput contrast type='email' label='Email address' className='mb-4'  placeholder='Enter your Email'/>
+              <MDBCol md='5'>
+                <MDBInput contrast type='email' placeholder='Enter your Email' className='footer-input' />
               </MDBCol>
-
               <MDBCol size="auto">
-                <MDBBtn outline color='light' type='submit' className='mb-4'>
+                <MDBBtn outline color='light' type='submit'>
                   Subscribe
                 </MDBBtn>
               </MDBCol>
@@ -124,24 +60,23 @@ export default function Footer() {
           </form>
         </section>
 
-        <MDBRow>
-          {/* Company Info */}
-          <MDBCol lg='4' md='12' className='mb-4 mb-md-0'>
+        {/* Info Columns */}
+        <MDBRow className='footer-info justify-content-center'>
+          <MDBCol lg='4' md='12'>
             <img
-                      src={logo2}
-                      alt="Tour Travel"
-                      width="170px"
-                      height="100px"
-                      style={{paddingBottom:"20px"}}
-                      className="d-inline-block align-top "/>
+              src={logo2}
+              alt="Tour Travel"
+              width="170"
+              height="50"
+              className="d-inline-block align-top mb-2"
+            />
             <p>
               Explore the world with us! We offer custom travel plans, group tours, and unforgettable adventures to the most beautiful places on Earth.
             </p>
           </MDBCol>
 
-          {/* Quick Links */}
-          <MDBCol lg='2' md='4' className='mb-4 mb-md-0'>
-            <h5 className='text-uppercase'>Quick Links</h5>
+          <MDBCol lg='2' md='4'>
+            <h5>Quick Links</h5>
             <ul className='list-unstyled'>
               <li><a href="/" className='text-white'>Home</a></li>
               <li><a href="/about" className='text-white'>About</a></li>
@@ -150,9 +85,8 @@ export default function Footer() {
             </ul>
           </MDBCol>
 
-          {/* Products */}
-          <MDBCol lg='3' md='4' className='mb-4 mb-md-0'>
-            <h5 className='text-uppercase'>Products</h5>
+          <MDBCol lg='3' md='4'>
+            <h5>Products</h5>
             <ul className='list-unstyled'>
               <li><a href='/packages' className='text-white'>Tour Packages</a></li>
               <li><a href='/packages' className='text-white'>Travel Insurance</a></li>
@@ -161,20 +95,19 @@ export default function Footer() {
             </ul>
           </MDBCol>
 
-          {/* Contact Info */}
-          <MDBCol lg='3' md='4' className='mb-4 mb-md-0'>
-            <h5 className='text-uppercase'>Contact Info</h5>
+          <MDBCol lg='3' md='4'>
+            <h5>Contact Info</h5>
             <ul className='list-unstyled'>
-              <li><MDBIcon icon="map-marker-alt" className='me-2' />Hyderabad, Telangana India</li>
+              <li><MDBIcon icon="map-marker-alt" className='me-2' /> Hyderabad, Telangana India</li>
               <li><MDBIcon icon="envelope" className='me-2' /> info@traveltour.com</li>
               <li><MDBIcon icon="phone" className='me-2' /> +91 7674938299</li>
               <li><MDBIcon icon="print" className='me-2' /> +91 8328415349</li>
             </ul>
           </MDBCol>
         </MDBRow>
-      </MDBContainer>
+      </div>
 
-      <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+      <div className='footer-bottom text-center'>
         © 2025 Tripzy | All rights reserved
       </div>
     </MDBFooter>

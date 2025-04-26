@@ -1,23 +1,26 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import Home from './TRAVEL/Home';
+import { useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './TRAVEL/NavBar';
 import Footer from './TRAVEL/Footer';
+import Home from './TRAVEL/Home';
 import ContactUs from './TRAVEL/Contact';
 import About from './TRAVEL/About';
 import Packages from './TRAVEL/Packages';
 import CategoryPage from './TRAVEL/CategoryPage';
 import ProductDetails from './TRAVEL/ProductDetails';
-import Login from './Login-Signup/Login';
-import SignUp from './Login-Signup/Signup';
+import Login from './Login-Signup/Login'; 
+import SignUp from './Login-Signup/signup';
 
-function AppWrapper() {
+function AppContent() {
   const location = useLocation();
-  const hideNavAndFooter = location.pathname === '/login' || location.pathname === '/signup';
+  const hideLayoutRoutes = ['/login', '/signup'];
+
+  const shouldHideLayout = hideLayoutRoutes.includes(location.pathname);
 
   return (
     <>
-      {!hideNavAndFooter && <NavBar />}
+      {!shouldHideLayout && <NavBar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<ContactUs />} />
@@ -28,17 +31,15 @@ function AppWrapper() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
-      {!hideNavAndFooter && <Footer />}
+      {!shouldHideLayout && <Footer />}
     </>
   );
 }
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
-      <AppWrapper />
+      <AppContent />
     </BrowserRouter>
   );
 }
-
-export default App;

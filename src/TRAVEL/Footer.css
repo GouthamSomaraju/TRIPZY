@@ -1,0 +1,90 @@
+/* ---- Base Footer Layout ---- */
+.footer-custom {
+    width: 100vw;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none;
+    box-sizing: border-box;
+    background-color: #212529; /* Fallback in case bgColor fails */
+  }
+  
+  .footer-inner {
+    width: 100%;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    max-width: 1400px;
+  }
+  
+  /* ---- Social Buttons ---- */
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+  
+  /* ---- Newsletter ---- */
+  .footer-newsletter {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-input {
+    margin-bottom: 0;
+  }
+  
+  /* ---- Info Columns ---- */
+
+  /* Footer.css */
+
+.footer-info {
+  text-align: center;
+  row-gap: 2rem;
+  justify-content: center; /* fallback if MDB doesn't apply it */
+}
+
+  
+  /* ---- Bottom Text ---- */
+  .footer-bottom {
+    padding: 1rem 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin: 0 !important;
+  }
+  
+  /* ---- Remove Extra Space From MDB Defaults ---- */
+  ul, p, h5 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* ---- Responsive Adjustments ---- */
+  @media (max-width: 576px) {
+    .footer-inner {
+      padding: 1.5rem 1rem;
+    }
+  
+    .footer-btn {
+      width: 36px;
+      height: 36px;
+    }
+  
+    .footer-input input {
+      font-size: 0.9rem;
+    }
+  
+    .footer-info {
+      text-align: center;
+    }
+  }
+  

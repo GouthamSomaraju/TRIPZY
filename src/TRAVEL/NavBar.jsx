@@ -1,15 +1,15 @@
 import React from 'react';
-import { Navbar, Nav, Container, Button } from 'react-bootstrap';
+import { Navbar, Nav, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import logo from './assets/images/Logo/logo.png';
-import './Navbar.css'; // You're already using this
+import './Navbar.css';
 
 const NavBar = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary py-2 shadow-sm">
-      <Container>
+    <Navbar collapseOnSelect expand="lg" className="navbar-custom bg-body-tertiary shadow-sm">
+      <div className="w-100 d-flex flex-column flex-lg-row align-items-center justify-content-between px-3 px-lg-5">
         {/* Logo */}
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="/" className="m-0">
           <img
             src={logo}
             alt="Tour Travel"
@@ -22,9 +22,9 @@ const NavBar = () => {
         {/* Mobile Toggle */}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-        {/* Nav Links */}
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mx-auto text-center gap-lg-4 gap-2 my-3 my-lg-0">
+        {/* Nav Links + Buttons */}
+        <Navbar.Collapse id="responsive-navbar-nav" className="w-100 mt-3 mt-lg-0 d-lg-flex justify-content-between align-items-center">
+          <Nav className="mx-auto text-center gap-lg-4 gap-2">
             <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
               Home
             </NavLink>
@@ -40,7 +40,7 @@ const NavBar = () => {
           </Nav>
 
           {/* Buttons */}
-          <Nav className="text-center gap-2">
+          <Nav className="text-center gap-2 mt-3 mt-lg-0">
             <NavLink to="/signup" className="text-decoration-none">
               <Button variant="outline-dark">SignUp</Button>
             </NavLink>
@@ -49,7 +49,7 @@ const NavBar = () => {
             </NavLink>
           </Nav>
         </Navbar.Collapse>
-      </Container>
+      </div>
     </Navbar>
   );
 };
