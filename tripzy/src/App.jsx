@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NavBar from './TRAVEL/NavBar';
+import Footer from './TRAVEL/Footer';
+import Home from './TRAVEL/Home';
+import ContactUs from './TRAVEL/Contact';
+import About from './TRAVEL/About';
+import Packages from './TRAVEL/Packages';
+import CategoryPage from './TRAVEL/CategoryPage';
+import ProductDetails from './TRAVEL/ProductDetails';
+import Login from './Login-Signup/Login'; 
+import SignUp from './Login-Signup/signup';
 
-function App() {
-  const [count, setCount] = useState(0)
+function AppContent() {
+  const location = useLocation();
+  const hideLayoutRoutes = ['/login', '/signup'];
+
+  const shouldHideLayout = hideLayoutRoutes.includes(location.pathname);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {!shouldHideLayout && <NavBar />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/packages" element={<Packages />} />
+        <Route path="/:category" element={<CategoryPage />} />
+        <Route path="/:category/:id" element={<ProductDetails />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+      {!shouldHideLayout && <Footer />}
     </>
-  )
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
+  );
+}
