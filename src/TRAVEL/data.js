@@ -14,6 +14,7 @@ import paris from "./Assets/images/cards/paris.jpg";
 import swiss from "./Assets/images/cards/swiss.jpg";
 import Kyoto from "./Assets/images/cards/Kyoto.jpeg";
 
+
 // Icons
 import locationIcon from "./Assets/images/icons/location.png";
 import star from "./Assets/images/icons/star.png";
